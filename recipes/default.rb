@@ -9,10 +9,11 @@ gem_package "bundler" do
 end
 
 # Install required gems via bundler
+# store them in vendor/bundle
 script "bundle" do
   interpreter "bash"
   cwd "/vagrant"
-  code "bundle install"
+  code "bundle install --path vendor/bundle"
 end
 
 # Package required gems in vendor folder
