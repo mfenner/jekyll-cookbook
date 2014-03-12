@@ -1,6 +1,8 @@
 # Install Ruby via rvm
 # Include here so that we can set Ruby version in this recipe
 include_recipe "rvm::system"
+include_recipe "rvm::vagrant"
+include_recipe "rvm::gem_package"
 
 # Install required packages
 %w{curl}.each do |pkg|
