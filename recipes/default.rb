@@ -1,5 +1,6 @@
 # Install Ruby via rvm
 # Include here so that we can set Ruby version in this recipe
+include_recipe "rvm::user"
 include_recipe "rvm::vagrant"
 
 # Install required packages
