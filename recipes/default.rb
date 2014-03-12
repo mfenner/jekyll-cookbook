@@ -1,17 +1,11 @@
-# Install Ruby via rvm
-# Include here so that we can set Ruby version in this recipe
-include_recipe "rvm::system"
-include_recipe "rvm::vagrant"
-include_recipe "rvm::gem_package"
-
 # Install required packages
-%w{curl}.each do |pkg|
+%w{ruby1.9.3 curl}.each do |pkg|
   package pkg do
     action :install
   end
 end
 gem_package "bundler" do
-  action :install
+  gem_binary "/usr/bin/gem"
 end
 
 # Install required gems via bundler
@@ -26,5 +20,5 @@ end
 script "bundle" do
   interpreter "bash"
   cwd "/vagrant"
-  code "bundle package --all"
+  code "bundle package -all"
 end
