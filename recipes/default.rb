@@ -20,5 +20,5 @@ end
 script "bundle" do
   interpreter "bash"
   cwd "/vagrant"
-  code "bundle package -all"
+  code "bundle package --all"
 end
