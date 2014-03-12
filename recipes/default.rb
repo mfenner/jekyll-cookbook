@@ -1,5 +1,9 @@
+# Install Ruby via rvm
+# Include here so that we can set Ruby version
+include_recipe "rvm::system"
+
 # Install required packages
-%w{ruby1.9.3 curl}.each do |pkg|
+%w{curl}.each do |pkg|
   package pkg do
     action :install
   end

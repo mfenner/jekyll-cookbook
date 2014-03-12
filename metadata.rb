@@ -8,6 +8,7 @@ version           "0.1.0"
 depends           "apt"
 depends           "build-essential"
 depends           "git"
+depends           "rvm"
 
 %w{ ubuntu }.each do |platform|
   supports platform
