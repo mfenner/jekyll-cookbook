@@ -10,8 +10,7 @@
   "dependencies": {
     "apt": ">= 0.0.0",
     "build-essential": ">= 0.0.0",
-    "git": ">= 0.0.0",
-    "rvm": ">= 0.0.0",
+    "git": ">= 0.0.0"
   },
   "version": "0.1.0"
 }
