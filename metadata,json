@@ -1,0 +1,16 @@
+{
+  "name": "jekyll",
+  "description": "Install Jekyll",
+  "maintainer": "Martin Fenner",
+  "maintainer_email": "mfenner@plos.org",
+  "license": "MIT",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0",
+    "build-essential": ">= 0.0.0",
+    "git": ">= 0.0.0",
+  },
+  "version": "0.1.0"
+}
