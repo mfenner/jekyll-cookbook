@@ -9,11 +9,19 @@ apt_repository "brightbox-ruby-ng" do
 end
 
 # Install Ruby and other required packages
-%w{ruby2.1 ruby2.1-dev curl}.each do |pkg|
+%w{ruby2.1 ruby2.1-dev ruby-switch curl}.each do |pkg|
   package pkg do
     action :install
   end
 end
+
+# Make Ruby 2.1 the default Ruby
+script "ruby-switch" do
+  interpreter "bash"
+  code "sudo ruby-switch --set ruby2.1"
+end
+
+# Install bundler
 gem_package "bundler" do
   gem_binary "/usr/bin/gem"
 end
