@@ -1,5 +1,5 @@
 # Install Ruby via rvm
-# Include here so that we can set Ruby version
+# Include here so that we can set Ruby version in this recipe
 include_recipe "rvm::system"
 
 # Install required packages
@@ -9,7 +9,7 @@ include_recipe "rvm::system"
   end
 end
 gem_package "bundler" do
-  gem_binary "/usr/bin/gem"
+  action :install
 end
 
 # Install required gems via bundler
