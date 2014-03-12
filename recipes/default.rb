@@ -9,7 +9,7 @@ apt_repository "brightbox-ruby-ng" do
 end
 
 # Install Ruby and other required packages
-%w{ruby2.1 curl}.each do |pkg|
+%w{ruby2.1 ruby2.1-dev curl}.each do |pkg|
   package pkg do
     action :install
   end
