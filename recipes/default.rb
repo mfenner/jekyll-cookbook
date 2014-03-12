@@ -14,3 +14,10 @@ script "bundle" do
   cwd "/vagrant"
   code "bundle install"
 end
+
+# Package required gems in vendor folder
+script "bundle" do
+  interpreter "bash"
+  cwd "/vagrant"
+  code "bundle package -all"
+end
