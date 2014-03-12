@@ -1,16 +1,21 @@
-# Install Ruby via rvm
-# Include here so that we can set Ruby version in this recipe
-include_recipe "rvm::user"
-include_recipe "rvm::vagrant"
+# Add ppa with newer Ruby version
+apt_repository "brightbox-ruby-ng" do
+  action       :add
+  uri          "http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu"
+  distribution "precise"
+  components   ["main"]
+  keyserver    "keyserver.ubuntu.com"
+  key          "C3173AA6"
+end
 
-# Install required packages
-%w{curl}.each do |pkg|
+# Install Ruby and other required packages
+%w{ruby2.0 curl}.each do |pkg|
   package pkg do
     action :install
   end
 end
 gem_package "bundler" do
-  action :install
+  gem_binary "/usr/bin/gem"
 end
 
 # Install required gems via bundler
